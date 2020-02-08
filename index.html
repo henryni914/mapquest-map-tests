@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-traffic.js?key=lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24"></script> -->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"
+    />
+    <title>Mapquest Tests</title>
+  </head>
+  <body>
+    <div id="mapTraffic" class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Hello</span>
+          <p>
+            <body style="border:0; margin: 0">
+              <div id="map" style="width: 100%; height:320px;"></div>
+            </body>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // "https://www.mapquestapi.com/staticmap/v5/map?center=edison,nj&zoom=10&traffic=flow|cons|inc&size=@2x&key=NXFIlO7HxQlGc5eWdpbtID6k5u9MPilg"
+
+      // "https://www.mapquestapi.com/traffic/v2/flow?key=NXFIlO7HxQlGc5eWdpbtID6k5u9MPilg&mapLat=38.890763&mapLng=-77.084755&mapHeight=400&mapWidth=400&mapScale=108335"
+
+      L.mapquest.key = "NXFIlO7HxQlGc5eWdpbtID6k5u9MPilg";
+
+      var map = L.mapquest.map("map", {
+        center: [34.0522, -118.2437],
+        layers: L.mapquest.tileLayer("map"),
+        zoom: 12
+      });
+
+      map.addLayer(L.mapquest.trafficLayer());
+
+
+
+        // var map = L.map('map', {
+        //       layers: MQ.mapLayer(),
+        //       center: [40.51872, -74.4121],
+        //       zoom: 12
+        //     });
+        //     MQ.trafficLayer().addTo(map);
+    </script>
+  </body>
+</html>
